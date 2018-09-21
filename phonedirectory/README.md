@@ -1,4 +1,4 @@
-##Simple Phone Directory Application
+## Simple Phone Directory Application
 
 ##### It requires PostgreSQL.
 ##### Application is deployed at 
