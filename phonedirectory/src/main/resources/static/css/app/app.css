@@ -1,0 +1,40 @@
+body{
+    background-color: #efefef;
+}
+span.spacing{
+    margin-right: 10px;
+}
+input.custom-width{
+    width: 200px;
+}
+input.spacing{
+    margin-right: 5px;
+}
+div#content-pane {
+    margin-top: 40px;
+}
+hr{
+    border-top: 1px solid #272323;
+    margin-left: -8%;
+    margin-right: -8%;
+}
+td{
+    padding-left: 4%;
+    padding-top: 2%;
+    width: 0.5%;
+}
+th {
+    padding-left: 4%;
+    padding-top: 2%;
+    width: 0.5%;
+}
+button.btn.btn-sm.btn-info{
+    margin-left: 10%;
+}
+div.col-lg-1{
+    width: 30%;
+}
+div.modal-body {
+    position: relative;
+    padding: 6%;
+}

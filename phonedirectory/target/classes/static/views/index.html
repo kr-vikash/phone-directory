@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Phone Directory</title>
+</head>
+<body ng-app="demo">
+<div class="container" ng-controller="UserController">
+    <div class="row">
+        <h2>Phone directory</h2>
+        <p>Create contact</p>
+        <div class="row">
+        <label>First Name</label> <input type="text" ng-model="queryData.firstName" ng-required="queryData.firstName" class="input-sm spacing"/>
+        <label>Middle Name</label> <input type="text" ng-model="queryData.middleName"  class="input-sm spacing"
+    />
+        <label>Last Name</label> <input type="text" ng-model="queryData.lastName" class="input-sm spacing"
+    />
+        </div>
+        <div id="content-pane" class="row">
+        <div class="col-lg-1">
+        <label>Phone Number</label> <input name="phone" type="text" ng-model="queryData.phoneNumber" class="input-sm spacing" ng-change="phoneNoValidation(queryData.phoneNumber)"
+    />
+            <br><span class="error" ng-show="isValidPhoneNo">Length must equal to 10</span>
+        </div>
+
+            <label>Contact Type</label> <select class="input-sm spacing" ng-model="queryData.contactType" ng-options="item for item in cType">
+            <option value="?" selected="selected">Home</option>
+            </select>
+        <button ng-disabled="disableBtn" ng-click="saveData()"  class="btn btn-sm btn-info">Create</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        Search:<input type="text" ng-model="searchText" class="input-sm spacing" ng-change="getData(searchText)"/>
+
+        <div class="row" ng-if="allDatas">
+        <table>
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Middle Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    Contact Type
+                </th>
+            </tr>
+            <tr ng-repeat="contact in qDatas">
+                <td>{{ contact.firstName }}</td>
+                <td>{{ contact.middleName }}</td>
+                <td>{{ contact.lastName }}</td>
+                <td>{{ contact.phoneNumber }}</td>
+                <td>{{ contact.contactType }}</td>
+                <td><button ng-click="edit(contact)">Edit</button></td>
+                <td><button ng-click="deleteData(contact.id)">Delete</button></td>
+            </tr>
+        </table>
+        </div>
+
+    </div>
+
+
+    </div>
+    <p ng-if="allDatas.length==0"> nothing found</p>
+</div
+</body>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/UserController.js"></script>
+<script src="js/app/UserService.js"></script>
+<script src="js/app/PopupCtrl.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/app/app.css"/>
+</html>
