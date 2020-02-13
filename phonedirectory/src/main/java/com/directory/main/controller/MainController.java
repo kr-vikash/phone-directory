@@ -22,10 +22,10 @@ public class MainController {
     private static final Logger LOGGER = LogManager.getLogger(MainController.class);
 
         @Autowired
-        PhoneRepository phoneRepository;
+        private PhoneRepository phoneRepository;
 
         @Autowired
-        PhoneService phoneService;
+        private PhoneService phoneService;
 
     /**
      *
