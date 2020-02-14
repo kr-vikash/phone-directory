@@ -37,4 +37,11 @@ public class WebController {
         return "logout";
     }
 
+    @RequestMapping("/signup")
+    public String signUp(){
+        return "sign-up";
+    }
+
+
+
 }
