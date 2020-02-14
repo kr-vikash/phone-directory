@@ -34,7 +34,7 @@ public class PhoneProfileSecurity extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .csrf().disable()
                 .authorizeRequests().antMatchers("/login").permitAll()
-                .anyRequest().authenticated()
+                .mvcMatchers("/login","/detail").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
