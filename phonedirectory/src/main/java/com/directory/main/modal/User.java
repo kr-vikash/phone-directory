@@ -3,15 +3,17 @@ package com.directory.main.modal;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "profile")
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @GenericGenerator(
             name = "usersSequenceGenerator",
@@ -24,6 +26,7 @@ public class User {
     )
 
     @Id
+    @Column(name="userid")
     @GeneratedValue(generator = "usersSequenceGenerator")
     private Long Id;
 
@@ -32,5 +35,11 @@ public class User {
     private String email;
 
     private String password;
+
+    public User(String username, String email, String password){
+        this.username=username;
+        this.email=email;
+        this.password=password;
+    }
 
 }

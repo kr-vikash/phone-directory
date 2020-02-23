@@ -2,6 +2,7 @@ package com.directory.main.controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -37,7 +38,7 @@ public class WebController {
         return "logout";
     }
 
-    @RequestMapping("/signup")
+    @GetMapping("/signup")
     public String signUp(){
         return "sign-up";
     }

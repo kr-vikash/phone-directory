@@ -15,5 +15,13 @@ angular.module('demo.services', []).factory('UserService',
             service.updateQueryData=function (updatedData) {
                 return $http.put("/detail/update",updatedData);
             };
+
+            service.createUserAccount= function (user) {
+                 return $http.post("/api/signup", user);
+            }
+            service.loginPage= function () {
+                             return $http.get("/login");
+            }
+
 			return service;
 		} ]);

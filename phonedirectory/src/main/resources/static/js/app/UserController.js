@@ -75,6 +75,6 @@ module.controller("UserController", [ "$scope", "UserService","$http","$filter",
                             }
                         }
                     });
-                }
+                };
 
             } ]);

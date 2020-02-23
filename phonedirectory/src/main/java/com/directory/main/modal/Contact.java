@@ -30,6 +30,10 @@ public class Contact {
     @GeneratedValue(generator = "usersSequenceGenerator")
     private Long Id;
 
+    @ManyToOne
+    @JoinColumn(name = "userid")
+    private User user;
+
     @Column(name = "fname", nullable = false)
     private String firstName;
 
