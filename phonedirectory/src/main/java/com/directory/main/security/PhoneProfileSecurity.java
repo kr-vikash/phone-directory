@@ -42,18 +42,10 @@ public class PhoneProfileSecurity extends WebSecurityConfigurerAdapter {
         return provider;
     }
 
-//    @Bean
-//    protected UserDetailsService userDetailsService(String username){
-////        List<UserDetails> users=new ArrayList<UserDetails>();
-//        UserDetails userDetails= userDetailsService.loadUserByUsername(username);
-////        users.add(User.withUsername("vikas").password("1234").roles("USER").build());
-//        return new  ;
-//    }
-
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .csrf().disable()
-                .authorizeRequests().antMatchers("/login").permitAll()
+                .authorizeRequests().antMatchers("/login","/user").permitAll()
                 .mvcMatchers("/login","/detail").authenticated()
                 .and()
                 .formLogin()
