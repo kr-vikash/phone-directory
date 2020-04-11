@@ -20,7 +20,13 @@ angular.module('demo.services', []).factory('UserService',
                  return $http.post("/api/signup", user);
             }
             service.loginPage= function () {
-                             return $http.get("/login");
+                 return $http.get("/login");
+            }
+            service.userInfo= function () {
+                 return $http.get("/user");
+            }
+            service.userById= function (id) {
+                 return $http.get("/user/"+id);
             }
 
 			return service;
