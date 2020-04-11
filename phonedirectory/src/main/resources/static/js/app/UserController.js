@@ -10,8 +10,15 @@ module.controller("UserController", [ "$scope", "UserService","$http","$filter",
                       $scope.allDatas= value.data;
                       $scope.qDatas=value.data;
                   });
+                  UserService.userInfo().then(function (value) {
+                      $scope.user= value.data;
+                  });
               }
-
+            $scope.user={
+               username:null,
+               id:null,
+               email:null
+            };
 	        $scope.queryData={
 	        	firstName:null,
 				middleName:null,

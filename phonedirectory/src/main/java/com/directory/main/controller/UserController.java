@@ -2,6 +2,7 @@ package com.directory.main.controller;
 
 
 import com.directory.main.modal.User;
+import com.directory.main.modal.UserDto;
 import com.directory.main.service.PhoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -19,13 +20,17 @@ public class UserController {
     @PostMapping("/api/signup")
     public User createUser(@RequestBody User user){
         phoneService.saveProfile(user);
-        System.out.println(user.getUsername());
         return user;
     }
 
     @GetMapping("/user")
-    public Principal getPrincipal(@AuthenticationPrincipal Principal principal){
-        return principal;
+    public UserDto getPrincipal(@AuthenticationPrincipal Principal principal){
+        return phoneService.getUserInfo(principal);
+    }
+
+    @GetMapping("/user/{id}")
+    public UserDto getPrincipal(@RequestParam Long id){
+        return phoneService.getUser(id);
     }
 
 }

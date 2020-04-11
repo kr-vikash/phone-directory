@@ -48,4 +48,12 @@ public class CustomUserDetail implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public String getEmail() {
+        return user.getEmail();
+    }
+
+    public Long getUserId(){
+        return user.getId();
+    }
 }
