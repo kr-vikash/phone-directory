@@ -1,4 +1,0 @@
-'use strict'
-
-var demoApp = angular.module('demo', [ 'ui.bootstrap', 'demo.controllers',
-		'demo.services','edit.controllers','signup.controllers']);
